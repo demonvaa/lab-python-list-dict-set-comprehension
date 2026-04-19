@@ -54,6 +54,7 @@ def calculate_order_statistics(customer_orders, product_list): # parametros de e
 
 def print_order_statistics(order_statistics):
     total, percentage = order_statistics
+    print(f"Order Statistics: ")
     print(f"Total Products Ordered: {total}")
     print(f"Percentage of Unique Products Ordered: {percentage}")
 
@@ -71,7 +72,7 @@ def calculate_total_price(customer_orders):
 
 
 def print_total_price(total):
-    print(f"\nTotal Price: {total} ")
+    print(f"Total Price: {total}")
 
 
 # -------------------------
