@@ -9,7 +9,7 @@ def get_customer_orders(product_list):
     number_of_orders = int(input("Enter the number of customer orders: "))
 
     orders = [
-        input("Enter product name: ")
+        input("Enter the name of a product that a customer wants to order: ")
         for _ in range(number_of_orders)
     ]
 
@@ -18,8 +18,9 @@ def get_customer_orders(product_list):
     for item in orders:
         if item in product_list and item not in valid_orders:
             valid_orders.append(item)
-
+    
     return valid_orders
+
 
 
 def update_inventory(customer_orders, inventory):
