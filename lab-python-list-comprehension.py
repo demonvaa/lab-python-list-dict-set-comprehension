@@ -5,17 +5,21 @@ def initialize_inventory(products): # parametro de entrada una lista
     }
     return inventory # devuelve un inventario
 
-def get_customer_orders(product_list): # parametro de entrada una lista
+def get_customer_orders(product_list):
     number_of_orders = int(input("Enter the number of customer orders: "))
 
     orders = [
         input("Enter product name: ")
-        for valor in range(number_of_orders)
+        for _ in range(number_of_orders)
     ]
 
-    valid_orders = [item for item in orders if item in product_list] 
+    # Filtrar válidos y eliminar duplicados manteniendo orden
+    valid_orders = []
+    for item in orders:
+        if item in product_list and item not in valid_orders:
+            valid_orders.append(item)
 
-    return valid_orders # devuelve una lista
+    return valid_orders
 
 
 def update_inventory(customer_orders, inventory):
@@ -67,7 +71,7 @@ def calculate_total_price(customer_orders):
 
 
 def print_total_price(total):
-    print(f"\nTOTAL: {total} ")
+    print(f"\nTotal Price: {total} ")
 
 
 # -------------------------
